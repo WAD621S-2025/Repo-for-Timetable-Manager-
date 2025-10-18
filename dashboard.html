@@ -1,1 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UTM — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1>University Timetable Manager</h1>
+      <div class="subtitle muted" id="user-subtitle"></div>
+    </div>
+
+    <div class="header-controls">
+      <select id="user-select" class="hidden"></select>
+      <input id="search-input" placeholder="Search subject, day, or location..." />
+      <select id="sort-select">
+        <option value="day">Sort: Day</option>
+        <option value="time">Sort: Start time</option>
+      </select>
+      <button id="theme-toggle">🌙</button>
+      <button id="logout-btn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left-panel glass">
+      <h2 id="form-title">Add Class</h2>
+      <form id="entry-form">
+        <input id="title" placeholder="Subject / Title" required />
+        <div class="row small">
+          <select id="day"></select>
+          <input id="start" type="time" value="08:00" />
+          <input id="end" type="time" value="09:00" />
+        </div>
+        <input id="location" placeholder="Location (e.g. AUD 101)" />
+        <div class="row actions">
+          <button type="submit">Save</button>
+          <button type="button" id="clear-btn" class="ghost">Clear</button>
+        </div>
+        <div class="muted small" style="margin-top:.6rem">
+          Tips: Subjects auto-assign a color. Admins can select users above to view/manage their timetables.
+        </div>
+      </form>
+
+      <div class="controls">
+        <button id="export-btn">Export JSON</button>
+        <button id="import-btn" class="ghost">Import JSON</button>
+        <button id="clear-all-btn" class="danger">Clear This User</button>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <h2>Weekly Timetable</h2>
+      <div id="week-grid" class="week-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer muted">Built to help — local prototype</footer>
+
+  <!-- Link to external JS -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
 
