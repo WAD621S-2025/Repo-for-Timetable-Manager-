@@ -231,3 +231,30 @@ body.dark-mode select option {
   color: #e6eef6;
 }
 
+
+/* Button Hover Effects */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 122, 255, 0.28);
+  background: linear-gradient(145deg, var(--primary), var(--accent));
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.25);
+}
+
+/* Ghost button hover (transparent style) */
+button.ghost:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Danger (delete) button hover */
+button.danger:hover {
+  background: #dc2626; /* slightly darker red */
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.35);
+  transform: translateY(-2px);
+}
