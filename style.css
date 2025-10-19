@@ -167,7 +167,6 @@ button.danger, .danger {
 .small{ font-size:0.9rem; }
 .footer{ text-align:center; padding:12px; color:var(--muted); }
 
-/* Tiny responsive */
 @media (max-width:520px){
   .header-controls select, .header-controls button { padding:8px 10px; }
   .left-panel { order:2; }
@@ -206,5 +205,29 @@ button.danger, .danger {
 
 .auth-card .actions {
   justify-content: center;
+}
+
+/* Fix for dropdown (select) and options visibility in dark mode */
+select {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  appearance: none;
+}
+
+body.dark-mode select {
+  background-color: #1c1c1e;
+  color: #e6eef6;
+  border-color: rgba(255,255,255,0.1);
+}
+
+select option {
+  background: #ffffff;
+  color: #111;
+}
+
+body.dark-mode select option {
+  background: #1c1c1e;
+  color: #e6eef6;
 }
 
